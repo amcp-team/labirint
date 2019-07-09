@@ -7,14 +7,14 @@ using UnityEngine.SceneManagement;
 public class PauseScript : MonoBehaviour
 {
 
-    
+    public float timer;
     public float timing;
     public bool isPaused;
     public GameObject pauseMenu;
     
     void Start()
     {
-        
+        timer = 0f;
     }
 
     
@@ -37,7 +37,7 @@ public class PauseScript : MonoBehaviour
         }
         else if (isPaused == false)
         {
-
+            timer += Time.deltaTime;
             timing = 1;
             pauseMenu.SetActive(false);
         }
